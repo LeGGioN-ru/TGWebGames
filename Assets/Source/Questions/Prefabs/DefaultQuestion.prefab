@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 395729514}
   - component: {fileID: 395729513}
   - component: {fileID: 395729512}
-  - component: {fileID: 395729515}
+  - component: {fileID: 6245348735868719711}
   m_Layer: 5
   m_Name: Answer (1)
   m_TagString: Untagged
@@ -123,7 +123,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &395729515
+--- !u!114 &6245348735868719711
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -132,11 +132,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 395729510}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9880784880a2f454f94e4717b6fa942a, type: 3}
+  m_Script: {fileID: 11500000, guid: 58fe7934a3e3fbf4aad012d2ff963650, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _nextQuestion: {fileID: 0}
-  _currentQuestion: {fileID: 785499074}
 --- !u!1 &426211044
 GameObject:
   m_ObjectHideFlags: 0
@@ -554,7 +552,7 @@ GameObject:
   - component: {fileID: 1149201739}
   - component: {fileID: 1149201738}
   - component: {fileID: 1149201737}
-  - component: {fileID: 1149201740}
+  - component: {fileID: 8778449943451191321}
   m_Layer: 5
   m_Name: Answer
   m_TagString: Untagged
@@ -665,7 +663,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &1149201740
+--- !u!114 &8778449943451191321
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -674,11 +672,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1149201735}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9880784880a2f454f94e4717b6fa942a, type: 3}
+  m_Script: {fileID: 11500000, guid: 58fe7934a3e3fbf4aad012d2ff963650, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _nextQuestion: {fileID: 0}
-  _currentQuestion: {fileID: 785499074}
 --- !u!1 &1201065874
 GameObject:
   m_ObjectHideFlags: 0
@@ -691,7 +687,7 @@ GameObject:
   - component: {fileID: 1201065878}
   - component: {fileID: 1201065877}
   - component: {fileID: 1201065876}
-  - component: {fileID: 1201065879}
+  - component: {fileID: 6980136818986571126}
   m_Layer: 5
   m_Name: Answer (2)
   m_TagString: Untagged
@@ -802,7 +798,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &1201065879
+--- !u!114 &6980136818986571126
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -811,11 +807,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1201065874}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9880784880a2f454f94e4717b6fa942a, type: 3}
+  m_Script: {fileID: 11500000, guid: 58fe7934a3e3fbf4aad012d2ff963650, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _nextQuestion: {fileID: 0}
-  _currentQuestion: {fileID: 785499074}
 --- !u!1 &1438437727
 GameObject:
   m_ObjectHideFlags: 0
@@ -828,7 +822,7 @@ GameObject:
   - component: {fileID: 1438437731}
   - component: {fileID: 1438437730}
   - component: {fileID: 1438437729}
-  - component: {fileID: 1438437732}
+  - component: {fileID: 5949069106948016113}
   m_Layer: 5
   m_Name: Answer (3)
   m_TagString: Untagged
@@ -939,7 +933,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &1438437732
+--- !u!114 &5949069106948016113
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -948,11 +942,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1438437727}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9880784880a2f454f94e4717b6fa942a, type: 3}
+  m_Script: {fileID: 11500000, guid: 58fe7934a3e3fbf4aad012d2ff963650, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _nextQuestion: {fileID: 0}
-  _currentQuestion: {fileID: 785499074}
 --- !u!1 &1952641170
 GameObject:
   m_ObjectHideFlags: 0
@@ -1139,6 +1131,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 054864abc3973854091ff709a6c30768, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _nextQuestion: {fileID: 0}
+  _answers:
+  - {fileID: 8778449943451191321}
+  - {fileID: 6245348735868719711}
+  - {fileID: 6980136818986571126}
+  - {fileID: 5949069106948016113}
+  _rightAnswer: {fileID: 0}
 --- !u!1 &6015749740664192361
 GameObject:
   m_ObjectHideFlags: 0
