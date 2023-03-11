@@ -1,11 +1,12 @@
 using System;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class QuizDefaultQuestion : Question
 {
     [SerializeField] private Question _nextQuestion;
-    [SerializeField] private Answer[] _answers;
-    [SerializeField] private Answer _rightAnswer;
+    [SerializeField] private TMP_Text _rightAnswer;
 
     private QuizCore _quizCore;
 
@@ -19,33 +20,17 @@ public class QuizDefaultQuestion : Question
             throw new Exception("Нету нужного ядра (ядра для викторин)");
     }
 
-    private void OnEnable()
+    protected override void OnAnswerClick(string answer)
     {
-        foreach (Answer answer in _answers)
-        {
-            answer.Clicked += SwitchQuestion;
-        }
-    }
-
-    private void OnDisable()
-    {
-        foreach (Answer answer in _answers)
-        {
-            answer.Clicked += SwitchQuestion;
-        }
-    }
-
-    public void SwitchQuestion(Answer answer)
-    {
-        if (answer == _rightAnswer)
+        if (answer == _rightAnswer.text)
             _quizCore.AddScore();
         else
             _quizCore.ReduceHealth();
 
         if (_quizCore.IsAlive)
         {
-            gameObject.SetActive(false);
             _nextQuestion.gameObject.SetActive(true);
+            gameObject.SetActive(false);
         }
         else
         {

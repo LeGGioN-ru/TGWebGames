@@ -1,14 +1,12 @@
 using System;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-[RequireComponent(typeof(Button))]
-public class Answer : MonoBehaviour
+public abstract class Answer : MonoBehaviour
 {
-    private Button Button;
+    protected Button Button;
 
-    public Action<Answer> Clicked;
+    public Action<string> Clicked;
 
     private void Awake()
     {
@@ -25,8 +23,5 @@ public class Answer : MonoBehaviour
         Button.onClick.RemoveListener(OnClick);
     }
 
-    private void OnClick()
-    {
-        Clicked?.Invoke(this);
-    }
+    protected abstract void OnClick();
 }
