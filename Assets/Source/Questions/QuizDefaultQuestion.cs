@@ -29,8 +29,7 @@ public class QuizDefaultQuestion : Question
 
         if (_quizCore.IsAlive)
         {
-            _nextQuestion.gameObject.SetActive(true);
-            gameObject.SetActive(false);
+            SwitchQuestion(_nextQuestion);
         }
         else
         {
