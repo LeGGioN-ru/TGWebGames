@@ -18,7 +18,7 @@ public abstract class Question : MonoBehaviour
     {
         foreach (Answer answer in Answers)
         {
-            answer.Clicked += OnAnswerClick;
+            answer.Clicked -= OnAnswerClick;
         }
     }
 
