@@ -1,5 +1,5 @@
 using UnityEngine;
 
-public class MainScreen : MonoBehaviour
+public class MainScreen : Page
 {
 }

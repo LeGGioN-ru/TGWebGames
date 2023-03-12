@@ -1,5 +1,5 @@
 using UnityEngine;
 
-public abstract class EndScreen : MonoBehaviour
+public abstract class EndScreen : Page
 {
 }

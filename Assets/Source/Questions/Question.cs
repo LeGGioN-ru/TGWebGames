@@ -1,20 +1,17 @@
 using System;
 using UnityEngine;
-using UnityEngine.UI;
-using DG.Tweening;
-using System.Collections;
 
-public abstract class Question : MonoBehaviour
+public abstract class Question : Page
 {
     [SerializeField] protected Answer[] Answers;
 
-    private readonly float _showHideDuration = 0.4f;
+    public Action Answered;
 
     private void OnEnable()
     {
         foreach (Answer answer in Answers)
         {
-            answer.Clicked += OnAnswerClick;
+            answer.Clicked += OnClick;
         }
     }
 
@@ -22,25 +19,14 @@ public abstract class Question : MonoBehaviour
     {
         foreach (Answer answer in Answers)
         {
-            answer.Clicked -= OnAnswerClick;
+            answer.Clicked -= OnClick;
         }
     }
 
-    public void SwitchQuestion(Question nextQuestion)
+    private void OnClick(string answer)
     {
-        transform.DOScale(0, _showHideDuration);
-        Show(nextQuestion);
-    }
-
-    public void Show(Question question, bool isNeedDelay = true)
-    {
-        question.transform.localScale = new Vector3(0, 0, 0);
-        question.gameObject.SetActive(true);
-
-        if (isNeedDelay)
-            question.transform.DOScale(1, _showHideDuration).SetDelay(_showHideDuration);
-        else
-            question.transform.DOScale(1, _showHideDuration);
+        OnAnswerClick(answer);
+        Answered?.Invoke();
     }
 
     protected abstract void OnAnswerClick(string answer);

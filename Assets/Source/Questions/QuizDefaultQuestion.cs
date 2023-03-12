@@ -1,12 +1,17 @@
+using DG.Tweening;
 using System;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class QuizDefaultQuestion : Question
 {
-    [SerializeField] private Question _nextQuestion;
+    [SerializeField] private Page _nextPage;
     [SerializeField] private TMP_Text _rightAnswer;
+    [SerializeField] private GameObject[] _parts;
+
+    [SerializeField] private Transform _startPositionRight;
+    [SerializeField] private Transform _startPositionLeft;
+    [SerializeField] private Transform _startPositionUp;
 
     private QuizCore _quizCore;
 
@@ -24,16 +29,33 @@ public class QuizDefaultQuestion : Question
     {
         if (answer == _rightAnswer.text)
             _quizCore.AddScore();
-        else
-            _quizCore.ReduceHealth();
 
-        if (_quizCore.IsAlive)
-        {
-            SwitchQuestion(_nextQuestion);
-        }
-        else
-        {
-            _quizCore.Lose();
-        }
+        SwitchPage(_nextPage);
     }
+
+    public void SkipQuestion()
+    {
+        _quizCore.AddScore();
+        SwitchPage(_nextPage);
+    }
+
+    //public override void Animate(Page nextPage)
+    //{
+    //    Hide();
+    //    Show(nextPage);
+    //}
+    ////TODO Вынести эту хуйню в отдельный класс
+    //public override void Hide()
+    //{
+    //    _parts[0].transform.DOMoveX(_parts[0].transform.position.x + 1000, 0.4f);
+    //    _parts[1].transform.DOMoveX(_parts[1].transform.position.x - 1200, 0.4f);
+    //    _parts[2].transform.DOMoveY(_parts[2].transform.position.y + 1100, 0.4f);
+
+    //}
+
+    //public override void Show(Page nextPage, bool isNeedDelay = true)
+    //{
+    //    base.Show(nextPage, isNeedDelay);
+    //}
 }
+

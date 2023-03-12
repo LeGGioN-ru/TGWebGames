@@ -4,7 +4,6 @@ public class QuizCore : Core, IQuizable
 {
     [SerializeField] private QuizEndScreen _quizEndScreen;
     [SerializeField] private int _health;
-    [SerializeField] private QuestionsRoot _questionRoot;
 
     private int _score;
 
@@ -20,10 +19,9 @@ public class QuizCore : Core, IQuizable
         _score++;
     }
 
-    public void Lose()
+    public void Lose(Page currentPage)
     {
-        _quizEndScreen.gameObject.SetActive(true);
-        _questionRoot.gameObject.SetActive(false);
+        currentPage.SwitchPage(_quizEndScreen);
     }
 }
 
