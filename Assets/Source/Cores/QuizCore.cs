@@ -4,7 +4,7 @@ public class QuizCore : Core, IQuizable
 {
     [SerializeField] private QuizEndScreen _quizEndScreen;
     [SerializeField] private int _health;
-    [SerializeField] private Question[] _questions;
+    [SerializeField] private QuestionsRoot _questionRoot;
 
     private int _score;
 
@@ -23,9 +23,7 @@ public class QuizCore : Core, IQuizable
     public void Lose()
     {
         _quizEndScreen.gameObject.SetActive(true);
-
-        foreach (Question question in _questions)
-            question.gameObject.SetActive(false);
+        _questionRoot.gameObject.SetActive(false);
     }
 }
 

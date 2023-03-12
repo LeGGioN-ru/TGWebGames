@@ -4,7 +4,7 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Button))]
 public class StartTestButton : MonoBehaviour
 {
-    [SerializeField] private Question _firstQuestion;
+    [SerializeField] private QuestionsRoot _questionRoot;
     [SerializeField] private MainScreen _mainScreen;
 
     private Button _button;
@@ -26,7 +26,7 @@ public class StartTestButton : MonoBehaviour
 
     private void OnClick()
     {
-        _firstQuestion.gameObject.SetActive(true);
+        _questionRoot.gameObject.SetActive(true);
         _mainScreen.gameObject.SetActive(false);
     }
 }

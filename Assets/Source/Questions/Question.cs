@@ -29,9 +29,18 @@ public abstract class Question : MonoBehaviour
     public void SwitchQuestion(Question nextQuestion)
     {
         transform.DOScale(0, _showHideDuration);
-        nextQuestion.transform.localScale = new Vector3(0, 0, 0);
-        nextQuestion.gameObject.SetActive(true);
-        nextQuestion.transform.DOScale(1, _showHideDuration).SetDelay(_showHideDuration);
+        Show(nextQuestion);
+    }
+
+    public void Show(Question question, bool isNeedDelay = true)
+    {
+        question.transform.localScale = new Vector3(0, 0, 0);
+        question.gameObject.SetActive(true);
+
+        if (isNeedDelay)
+            question.transform.DOScale(1, _showHideDuration).SetDelay(_showHideDuration);
+        else
+            question.transform.DOScale(1, _showHideDuration);
     }
 
     protected abstract void OnAnswerClick(string answer);
