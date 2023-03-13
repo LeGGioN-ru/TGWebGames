@@ -9,6 +9,7 @@ public class TestSwitcher : MonoBehaviour
     [SerializeField] private Page _nextPage;
     [SerializeField] private QuestionCounter _questionCounter;
     [SerializeField] private bool _isEnabling;
+    [SerializeField] private QuizCore _quizCore;
 
     protected Button Button;
 
@@ -42,6 +43,7 @@ public class TestSwitcher : MonoBehaviour
             _questionCounter.transform.localScale = new Vector3(1, 1, 1);
             _questionCounter.transform.DOScale(0, _scaleDuration);
             _questionCounter.ResetCount();
+            _quizCore.ResetScore();
         }
 
         _currentPage.SwitchPage(_nextPage);

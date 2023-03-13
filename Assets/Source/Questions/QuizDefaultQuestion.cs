@@ -1,3 +1,4 @@
+using Agava.YandexGames;
 using DG.Tweening;
 using System;
 using TMPro;
@@ -34,6 +35,13 @@ public class QuizDefaultQuestion : Question
     }
 
     public void SkipQuestion()
+    {
+#if UNITY_WEBGL && !UNITY_EDITOR
+ VideoAd.Show(null, NextPage);
+#endif
+    }
+
+    private void NextPage()
     {
         _quizCore.AddScore();
         SwitchPage(_nextPage);

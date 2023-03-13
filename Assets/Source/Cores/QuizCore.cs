@@ -7,7 +7,7 @@ public class QuizCore : Core, IQuizable
 
     private int _score;
 
-    public bool IsAlive { get => _health > 0; }
+    public int Score => _score;
 
     public void ReduceHealth()
     {
@@ -19,6 +19,11 @@ public class QuizCore : Core, IQuizable
         _score++;
     }
 
+    public void ResetScore()
+    {
+        _score = 0;
+    }
+
     public void Lose(Page currentPage)
     {
         currentPage.SwitchPage(_quizEndScreen);
@@ -27,8 +32,6 @@ public class QuizCore : Core, IQuizable
 
 public interface IQuizable
 {
-    bool IsAlive { get; }
-
     public void ReduceHealth();
     public void AddScore();
 }
