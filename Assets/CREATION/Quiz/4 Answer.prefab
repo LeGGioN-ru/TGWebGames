@@ -148,6 +148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d29aef9e880fc147ac03845b7f2ff81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _showDelay: 0.02
 --- !u!1 &875857273
 GameObject:
   m_ObjectHideFlags: 0
@@ -576,9 +577,6 @@ MonoBehaviour:
   - {fileID: 6015749740664192361}
   - {fileID: 6015749741303900076}
   - {fileID: 591618467}
-  _startPositionRight: {fileID: 6015749740664192360}
-  _startPositionLeft: {fileID: 6015749741303900079}
-  _startPositionUp: {fileID: 591618468}
 --- !u!1 &6015749740664192361
 GameObject:
   m_ObjectHideFlags: 0

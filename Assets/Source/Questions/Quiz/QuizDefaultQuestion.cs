@@ -1,18 +1,9 @@
-using Agava.YandexGames;
-using DG.Tweening;
-using System;
-using TMPro;
 using UnityEngine;
 
 public class QuizDefaultQuestion : Question
 {
     [SerializeField] private Page _nextPage;
-    [SerializeField] private TMP_Text _rightAnswer;
-    [SerializeField] private GameObject[] _parts;
-
-    [SerializeField] private Transform _startPositionRight;
-    [SerializeField] private Transform _startPositionLeft;
-    [SerializeField] private Transform _startPositionUp;
+    [SerializeField] private Answer _rightAnswer;
 
     private QuizCore _quizCore;
 
@@ -21,27 +12,19 @@ public class QuizDefaultQuestion : Question
     private void Awake()
     {
         _quizCore = GetComponentInParent<QuizCore>();
-
-        if (_quizCore == null)
-            throw new Exception("Нету нужного ядра (ядра для викторин)");
     }
 
-    protected override void OnAnswerClick(string answer)
+    protected override void OnAnswerClick(Answer answer)
     {
-        if (answer == _rightAnswer.text)
+        if (answer == _rightAnswer)
             _quizCore.AddScore();
+        else
+            _quizCore.ReduceHealth();
 
         SwitchPage(_nextPage);
     }
 
-    public void SkipQuestion()
-    {
-#if UNITY_WEBGL && !UNITY_EDITOR
- VideoAd.Show(null, NextPage);
-#endif
-    }
-
-    private void NextPage()
+    protected override void AdvertisingExecute()
     {
         _quizCore.AddScore();
         SwitchPage(_nextPage);

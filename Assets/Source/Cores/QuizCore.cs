@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class QuizCore : Core, IQuizable
@@ -9,13 +10,18 @@ public class QuizCore : Core, IQuizable
 
     public int Score => _score;
 
+    public Action RightAnswered;
+    public Action WrongAnswered;
+
     public void ReduceHealth()
     {
+        WrongAnswered?.Invoke();
         _health--;
     }
 
     public void AddScore()
     {
+        RightAnswered?.Invoke();
         _score++;
     }
 

@@ -6,7 +6,7 @@ public abstract class Answer : MonoBehaviour
 {
     protected Button Button;
 
-    public Action<string> Clicked;
+    public Action<Answer> Clicked;
 
     private void Awake()
     {

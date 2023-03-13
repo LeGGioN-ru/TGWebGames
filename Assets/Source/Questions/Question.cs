@@ -23,11 +23,20 @@ public abstract class Question : Page
         }
     }
 
-    private void OnClick(string answer)
+    private void OnClick(Answer answer)
     {
         OnAnswerClick(answer);
         Answered?.Invoke();
     }
 
-    protected abstract void OnAnswerClick(string answer);
+    public void SkipQuestion()
+    {
+#if UNITY_WEBGL && !UNITY_EDITOR
+ VideoAd.Show(null, NextPage);
+#endif
+    }
+
+    protected abstract void AdvertisingExecute();
+
+    protected abstract void OnAnswerClick(Answer answer);
 }

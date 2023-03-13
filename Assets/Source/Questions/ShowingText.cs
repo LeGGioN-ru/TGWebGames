@@ -5,10 +5,10 @@ using UnityEngine;
 [RequireComponent(typeof(TMP_Text))]
 public class ShowingText : MonoBehaviour
 {
+    [SerializeField] private float _showDelay = 0.05f;
+    
     private TMP_Text _text;
-
     private string _currentText;
-    private readonly float _showDelay = 0.05f;
 
     private void Awake()
     {

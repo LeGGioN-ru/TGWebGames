@@ -15,6 +15,6 @@ public class AnswerString : Answer
 
     protected override void OnClick()
     {
-        Clicked?.Invoke(_text);
+        Clicked?.Invoke(this);
     }
 }
