@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class VideoAdShower : MonoBehaviour
 {
     [SerializeField] private QuizDefaultQuestion _question;
+    [SerializeField] private QuizDigitQuestion _digitQuestion;
 
     private Button _button;
 
@@ -25,6 +26,10 @@ public class VideoAdShower : MonoBehaviour
 
     private void OnClick()
     {
-        _question.SkipQuestion();
+        if (_question != null)
+            _question.SkipQuestion();
+
+        if (_digitQuestion != null)
+            _digitQuestion.SkipQuestion();
     }
 }
