@@ -259,6 +259,7 @@ GameObject:
   - component: {fileID: 4421376950083097595}
   - component: {fileID: 4421376950083097594}
   - component: {fileID: 4421376950083097593}
+  - component: {fileID: 936297133121306771}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -382,6 +383,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _slider: {fileID: 4421376950643321502}
+--- !u!95 &936297133121306771
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4421376950083097588}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 13db893991fb6ac4f8ba6c6738822c0d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &4421376950176020032
 GameObject:
   m_ObjectHideFlags: 0
@@ -894,9 +915,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u0421\u043A\u043E\u043B\u044C\u043A\u043E \u0440\u0430\u0437\u043D\u043E\u0439
-    \u0435\u0434\u044B \u043C\u043E\u0436\u043D\u043E \u0441\u043A\u043E\u0440\u043C\u0438\u0442\u044C
-    \u043B\u043E\u0448\u0430\u0434\u0438?\r"
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b3d8dd6565bb159478c7a7c22bdb2aed, type: 2}
   m_sharedMaterial: {fileID: -7682478366577957738, guid: b3d8dd6565bb159478c7a7c22bdb2aed, type: 2}
@@ -923,7 +942,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 41.5
+  m_fontSize: 66.25
   m_fontSizeBase: 41.5
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -977,7 +996,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d29aef9e880fc147ac03845b7f2ff81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _showDelay: 0.02
+  _showDelay: 0.03
 --- !u!114 &1366702077
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -991,9 +1010,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   translationName: Eat for hourse?
-  FallbackText: "\u0421\u043A\u043E\u043B\u044C\u043A\u043E \u0440\u0430\u0437\u043D\u043E\u0439
-    \u0435\u0434\u044B \u043C\u043E\u0436\u043D\u043E \u0441\u043A\u043E\u0440\u043C\u0438\u0442\u044C
-    \u043B\u043E\u0448\u0430\u0434\u0438?\r\n"
+  FallbackText: 
 --- !u!1 &4421376951016274596
 GameObject:
   m_ObjectHideFlags: 0
@@ -1708,7 +1725,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 8c39723f051fc154fae796cbe4bc9408, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0.05
   m_Pitch: 1
   Loop: 0
@@ -1804,7 +1821,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 7240a8e97979f6646ab622b10964dd9c, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0.05
   m_Pitch: 1
   Loop: 0

@@ -5,13 +5,13 @@ using UnityEngine;
 [RequireComponent(typeof(TMP_Text))]
 public class ShowingText : MonoBehaviour
 {
-    [SerializeField] private float _showDelay = 0.05f;
-    
+    private float _showDelay;
     private TMP_Text _text;
     private string _currentText;
 
     private void Awake()
     {
+        _showDelay = 0.03f;
         _text = GetComponent<TMP_Text>();
         _currentText = _text.text;
         _text.text = string.Empty;
