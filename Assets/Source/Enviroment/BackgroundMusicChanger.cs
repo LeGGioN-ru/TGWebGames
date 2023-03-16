@@ -7,8 +7,9 @@ public class BackgroundMusicChanger : MonoBehaviour
 {
     [SerializeField] private AudioSource _source;
     [SerializeField] private AudioClip _clip;
+    [SerializeField] private float _targetVolume;
 
-    private readonly float _hideDelay = 1;
+    private readonly float _hideDelay = 0.5f;
     private Button _button;
 
     private void Awake()
@@ -29,7 +30,7 @@ public class BackgroundMusicChanger : MonoBehaviour
     private void OnClick()
     {
         _source.DOFade(0, _hideDelay).onComplete += OnComplete;
-        _source.DOFade(1, _hideDelay).SetDelay(_hideDelay);
+        _source.DOFade(_targetVolume, _hideDelay).SetDelay(_hideDelay);
     }
 
     private void OnComplete()

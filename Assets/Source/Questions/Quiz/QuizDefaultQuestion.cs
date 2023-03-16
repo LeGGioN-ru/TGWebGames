@@ -4,6 +4,8 @@ public class QuizDefaultQuestion : Question
 {
     [SerializeField] private Page _nextPage;
     [SerializeField] private Answer _rightAnswer;
+    [SerializeField] private AudioSource _rightSound;
+    [SerializeField] private AudioSource _wrongSound;
 
     private QuizCore _quizCore;
 
@@ -17,9 +19,15 @@ public class QuizDefaultQuestion : Question
     protected override void OnAnswerClick(Answer answer)
     {
         if (answer == _rightAnswer)
+        {
+            _rightSound.Play();
             _quizCore.AddScore();
+        }
         else
+        {
+            _wrongSound.Play();
             _quizCore.ReduceHealth();
+        }
 
         SwitchPage(_nextPage);
     }
