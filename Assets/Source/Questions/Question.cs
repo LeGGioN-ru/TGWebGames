@@ -1,9 +1,10 @@
 using System;
 using UnityEngine;
-
+using Agava.YandexGames;
 public abstract class Question : Page
 {
     [SerializeField] protected Answer[] Answers;
+    [SerializeField] private SoundMuterButton _soundMuter;
 
     public Action Answered;
 
@@ -32,11 +33,24 @@ public abstract class Question : Page
     public void SkipQuestion()
     {
 #if UNITY_WEBGL && !UNITY_EDITOR
- VideoAd.Show(null, NextPage);
+        VideoAd.Show(() => AudioListener.volume = 0, AdvertisingExecute, DisableSound, null);
 #endif
     }
 
-    protected abstract void AdvertisingExecute();
+    public abstract void ResetQuestion();
+
+    protected virtual void AdvertisingExecute()
+    {
+        Answered?.Invoke();
+    }
+
+    private void DisableSound()
+    {
+        if (_soundMuter.IsPlaying == true)
+            AudioListener.volume = 1;
+        else
+            AudioListener.volume = 0;
+    }
 
     protected abstract void OnAnswerClick(Answer answer);
 }

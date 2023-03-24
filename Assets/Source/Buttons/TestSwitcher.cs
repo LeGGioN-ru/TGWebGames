@@ -2,6 +2,7 @@ using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
 
+//TODO Вывести в отдельные классы
 [RequireComponent(typeof(Button))]
 public class TestSwitcher : MonoBehaviour
 {
@@ -30,7 +31,7 @@ public class TestSwitcher : MonoBehaviour
         Button.onClick.RemoveListener(OnClick);
     }
 
-    private void OnClick()
+    protected virtual void OnClick()
     {
         if (_isEnabling)
         {

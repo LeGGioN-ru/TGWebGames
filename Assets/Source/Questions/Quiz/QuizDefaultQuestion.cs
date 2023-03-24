@@ -34,8 +34,14 @@ public class QuizDefaultQuestion : Question
 
     protected override void AdvertisingExecute()
     {
+        base.AdvertisingExecute();
         _quizCore.AddScore();
         SwitchPage(_nextPage);
+    }
+
+    public override void ResetQuestion()
+    {
+
     }
 
     //public override void Animate(Page nextPage)

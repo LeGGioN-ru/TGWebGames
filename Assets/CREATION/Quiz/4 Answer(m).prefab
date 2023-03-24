@@ -280,11 +280,11 @@ RectTransform:
   m_Father: {fileID: 6615945177145222598}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.4433883, y: 0.049000002}
-  m_AnchorMax: {x: 0.5655352, y: 0.10614186}
-  m_AnchoredPosition: {x: -3.000061, y: 0.29162598}
-  m_SizeDelta: {x: 5.999878, y: 0.584301}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 8.5000305, y: 36.906494}
+  m_SizeDelta: {x: 356, y: 95.187}
+  m_Pivot: {x: 0.5, y: 0}
 --- !u!222 &625071886477300302
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -700,7 +700,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d29aef9e880fc147ac03845b7f2ff81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _showDelay: 0.02
 --- !u!114 &625071886552483143
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2462,6 +2461,7 @@ MonoBehaviour:
   - {fileID: 2265713593217629435}
   - {fileID: 2917966173582275245}
   - {fileID: 8761317347562518077}
+  _soundMuter: {fileID: 0}
   _nextPage: {fileID: 0}
   _rightAnswer: {fileID: 3539371096140050922}
   _rightSound: {fileID: 625071887769990638}

@@ -1,5 +1,6 @@
 using UnityEngine;
 using System;
+using UnityEngine.UI;
 
 //TODO Сделать класс questionQuiz
 public class QuizDigitQuestion : Question
@@ -8,6 +9,7 @@ public class QuizDigitQuestion : Question
     [SerializeField] private int _rightAnswer;
     [SerializeField] private AudioSource _rightSound;
     [SerializeField] private AudioSource _wrongSound;
+    [SerializeField] private SliderDigitShow _slider;
 
     private QuizCore _quizCore;
 
@@ -46,7 +48,13 @@ public class QuizDigitQuestion : Question
 
     protected override void AdvertisingExecute()
     {
+        base.AdvertisingExecute();
         _quizCore.AddScore();
         SwitchPage(_nextPage);
+    }
+
+    public override void ResetQuestion()
+    {
+        _slider.ResetSlider();
     }
 }

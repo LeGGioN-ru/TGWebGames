@@ -12,7 +12,7 @@ public class SliderDigitShow : MonoBehaviour
     private void Awake()
     {
         _slider = GetComponent<Slider>();
-        _text.text = "0";
+        _text.text = _slider.minValue.ToString();
     }
 
     private void OnEnable()
@@ -28,5 +28,11 @@ public class SliderDigitShow : MonoBehaviour
     private void OnChange(float value)
     {
         _text.text = value.ToString();
+    }
+
+    public void ResetSlider()
+    {
+        _text.text = _slider.minValue.ToString();
+        _slider.value = _slider.minValue;
     }
 }

@@ -1,10 +1,11 @@
-using System.Diagnostics;
 using UnityEngine;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Button))]
-public class OurGamesButton : MonoBehaviour
+public class QuizReseter : MonoBehaviour
 {
+    [SerializeField] private Question[] _questions;
+
     private Button _button;
 
     private void Awake()
@@ -24,10 +25,7 @@ public class OurGamesButton : MonoBehaviour
 
     private void OnClick()
     {
-        System.Diagnostics.Process.Start(new ProcessStartInfo
-        {
-            FileName = "https://yandex.ru/games/developer?name=Lazy%20Cat",
-            UseShellExecute = true
-        });
+        foreach (Question question in _questions)
+            question.ResetQuestion();
     }
 }

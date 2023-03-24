@@ -10,7 +10,7 @@ public class QuizEndScreenDefinder : MonoBehaviour
 
     private void OnEnable()
     {
-        _quizEndScreen.SetUI(Execute());
+        _quizEndScreen.SetUI(Execute(), _quizCore.Score);
     }
 
     private QuizResult Execute()
@@ -37,8 +37,10 @@ public class QuizResult
     [SerializeField] private int _score;
     [SerializeField] private string _description;
     [SerializeField] private Sprite _image;
+    [SerializeField] private string _name;
 
+    public string Name => _name;
     public int Score => _score;
     public Sprite Image => _image;
-    public string Description => _description;  
+    public string Description => _description;
 }
