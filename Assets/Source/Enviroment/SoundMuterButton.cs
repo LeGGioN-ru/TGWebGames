@@ -2,11 +2,11 @@ using UnityEngine;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Button))]
+[RequireComponent(typeof(Image))]
 public class SoundMuterButton : MonoBehaviour
 {
     [SerializeField] private Sprite _onSound;
     [SerializeField] private Sprite _offSound;
-    [SerializeField] private SoundMuter _soundMuter;
 
     private Button _button;
     private Image _image;
