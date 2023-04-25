@@ -1,10 +1,13 @@
 using DG.Tweening;
+using System;
 using System.Collections;
 using UnityEngine;
 
 public abstract class Page : MonoBehaviour
 {
     private readonly float _showHideDuration = 0.4f;
+
+    public Action Showed;
 
     public void SwitchPage(Page nextPage)
     {

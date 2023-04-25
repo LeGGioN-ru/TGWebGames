@@ -11,6 +11,7 @@ public class TestSwitcher : MonoBehaviour
     [SerializeField] private QuestionCounter _questionCounter;
     [SerializeField] private bool _isEnabling;
     [SerializeField] private QuizCore _quizCore;
+    [SerializeField] private int _amountQuestion;
 
     protected Button Button;
 
@@ -47,6 +48,7 @@ public class TestSwitcher : MonoBehaviour
             _quizCore.ResetScore();
         }
 
+        _questionCounter.SetAmountQuestions(_amountQuestion);
         _currentPage.SwitchPage(_nextPage);
     }
 }

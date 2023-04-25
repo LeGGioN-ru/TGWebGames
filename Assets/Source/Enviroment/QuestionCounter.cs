@@ -9,6 +9,7 @@ public class QuestionCounter : MonoBehaviour
     [SerializeField] private Slider _porgress;
 
     private float _counter = 0;
+    private float _amountQuestions;
 
     private void OnEnable()
     {
@@ -20,6 +21,11 @@ public class QuestionCounter : MonoBehaviour
     {
         foreach (Question question in _questions)
             question.Answered -= OnAnswered;
+    }
+
+    public void SetAmountQuestions(int amount)
+    {
+        _amountQuestions = amount;
     }
 
     public void ResetCount()
@@ -36,6 +42,6 @@ public class QuestionCounter : MonoBehaviour
 
     private void UpdateUI(float count)
     {
-        _porgress.value = count / _questions.Length;
+        _porgress.value = count / _amountQuestions;
     }
 }

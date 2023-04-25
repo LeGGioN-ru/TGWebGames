@@ -4,7 +4,6 @@ using Agava.YandexGames;
 public abstract class Question : Page
 {
     [SerializeField] protected Answer[] Answers;
-    [SerializeField] private SoundMuterButton _soundMuter;
 
     public Action Answered;
 
@@ -46,7 +45,7 @@ public abstract class Question : Page
 
     private void DisableSound()
     {
-        if (_soundMuter.IsPlaying == true)
+        if (SoundMuter.Instance.IsPlaying == true)
             AudioListener.volume = 1;
         else
             AudioListener.volume = 0;

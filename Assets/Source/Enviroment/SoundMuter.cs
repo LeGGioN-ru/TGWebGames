@@ -1,14 +1,19 @@
 using Agava.WebUtility;
+using System;
 using UnityEngine;
 
 [RequireComponent(typeof(SoundMuterButton))]
 public class SoundMuter : MonoBehaviour
 {
-    private SoundMuterButton _soundMuterButton;
+    public static SoundMuter Instance;
+
+    private bool _isPlaying = true;
+
+    public bool IsPlaying => _isPlaying;
 
     private void Awake()
     {
-        _soundMuterButton = GetComponent<SoundMuterButton>();
+        Instance = this;
     }
 
     private void OnEnable()
@@ -21,11 +26,23 @@ public class SoundMuter : MonoBehaviour
         WebApplication.InBackgroundChangeEvent -= OnInBackgroundChange;
     }
 
+    public void SwitchSound()
+    {
+        if (_isPlaying == false)
+        {
+            _isPlaying = true;
+            AudioListener.volume = 1.0f;
+            return;
+        }
+
+        _isPlaying = false;
+        AudioListener.volume = 0.0f;
+    }
     private void OnInBackgroundChange(bool inBackground)
     {
         AudioListener.pause = inBackground;
 
-        if (_soundMuterButton.IsPlaying)
+        if (_isPlaying)
             AudioListener.volume = inBackground ? 0f : 1f;
     }
 }
